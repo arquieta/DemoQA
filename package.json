@@ -1,0 +1,26 @@
+{
+  "name": "demoqa",
+  "version": "1.0.0",
+  "description": "Training for cypress using Demo QA webpage",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "DEMOQA"
+  },
+  "keywords": [
+    "cypress",
+    "testing",
+    "automation",
+    "demoqa"
+  ],
+  "author": "Diego Arquieta",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^12.17.4",
+    "prettier": "^3.0.2",
+    "typescript": "^5.1.6"
+  }
+}
