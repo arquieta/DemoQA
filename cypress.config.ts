@@ -1,9 +1,18 @@
-import { defineConfig } from "cypress";
+const { defineConfig } = require("cypress");
 
-export default defineConfig({
+module.exports = defineConfig({
+  reporter: 'cypress-mochawesome-reporter',
+  reporterOptions: {
+    charts: true,
+    reportPagetitle: 'custom-title'
+  },
   e2e: {
+    baseUrl: "https://demoqa.com",
+    "chromeWebSecurity": false,
     setupNodeEvents(on, config) {
       // implement node event listeners here
+      require('cypress-mochawesome-reporter/plugin')(on);
     },
+    specPattern: "cypress/e2e/**/*.{js,jsx,ts,tsx,feature}"
   },
 });
