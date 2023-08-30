@@ -16,7 +16,7 @@ describe('Validate landing page works as expected', () => {
 		
 		})
     
-    it('Validate elements displayed to interact', () => {
+    it('Validate elements displayed to interact, using aliases', () => {
       cy.viewport(1920, 1080)
       cy.clearCookies()
       cy.clearLocalStorage()
@@ -32,7 +32,7 @@ describe('Validate landing page works as expected', () => {
           cy.get('footer').should('have.text', '© 2013-2020 TOOLSQA.COM | ALL RIGHTS RESERVED.')
           
         })
-    it('Validate elements displayed to interact', () => {
+    it('Validate elements displayed to interact, using array', () => {
           cy.viewport(1920, 1080)
           cy.clearCookies()
           cy.clearLocalStorage()
@@ -53,7 +53,7 @@ describe('Validate landing page works as expected', () => {
               
             })
 
-  it('Validate that all options in "Elements" menu are displayed', () => {
+  it('Validate that all options in "Elements" menu are displayed, hardcoded', () => {
     cy.viewport(1920, 1080)
 	  cy.clearCookies()
 	  cy.clearLocalStorage()
@@ -71,7 +71,7 @@ describe('Validate landing page works as expected', () => {
     cy.get('footer').should('have.text', '© 2013-2020 TOOLSQA.COM | ALL RIGHTS RESERVED.')
 
 })
-it.only('Validate that all elements in menu are displayed', () => {
+it.only('Validate that all elements in menu are displayed, with array', () => {
 	cy.viewport(1920, 1080)
   cy.clearCookies()
   cy.clearLocalStorage()
