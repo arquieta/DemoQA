@@ -78,7 +78,7 @@ describe('Working with forms', () => {
       cy.get('#hobbies-checkbox-2').should('exist').click({force: true})
       cy.get('label[for="hobbies-checkbox-2"]').should('have.text', 'Reading')
      
-      cy.get('#uploadPicture').selectFile('cypress/fixtures/IMG_9532.jpg')
+      cy.get('#uploadPicture').selectFile('cypress/fixtures/test.png')
 
       // cy.fixture('IMG_9532.jpg', { encoding: null }).as('myFixture')
       // cy.get('#uploadPicture').selectFile('@myFixture')
@@ -99,7 +99,7 @@ describe('Working with forms', () => {
         cy.contains('td', 'Date of Birth').siblings('td').should('contain', '25 August,2023');
         cy.contains('td', 'Subjects').siblings('td').should('be.empty');
         cy.contains('td', 'Hobbies').siblings('td').should('be.contain', 'Reading');
-        cy.contains('td', 'Picture').siblings('td').should('contain', 'IMG_9532.jpg');
+        cy.contains('td', 'Picture').siblings('td').should('contain', 'test.png');
         cy.contains('td', 'Address').siblings('td').should('contain', 'México, Nuevo León, América');
         cy.contains('td', 'State and City').siblings('td').should('be.empty');
       });
