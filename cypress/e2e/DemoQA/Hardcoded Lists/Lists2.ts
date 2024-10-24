@@ -1,3 +1,5 @@
+import { menuList, menuOption, selectableOptions } from "../../../fixtures/pom";
+
 describe('Validar escenario pal Juanjo', () => {
 	
 	beforeEach(() =>{
@@ -13,8 +15,11 @@ describe('Validar escenario pal Juanjo', () => {
 	it('Validate that an element from a list is selected', () => {
 		
 
-        cy.get('.card.mt-4.top-card').contains('Interactions').click()
-        cy.contains('Selectable').click()
+        //cy.get('.card.mt-4.top-card').contains('Interactions').click()
+        menuOption('Interactions')
+        //cy.contains('Selectable').click()
+        menuList('Selectable')
+        selectableOptions('List')
         cy.get('ul#verticalListContainer li').contains('Cras justo odio').click()
         cy.get('ul#verticalListContainer li').contains('Cras justo odio').should('have.class', 'active')
 		cy.wait(10000)
@@ -24,8 +29,9 @@ describe('Validar escenario pal Juanjo', () => {
     it('Validate that an element from a list is selected', () => {
 		
 
-        cy.get('.card.mt-4.top-card').contains('Interactions').click()
-        cy.contains('Selectable').click()
+        menuOption('Interactions')
+        menuList('Selectable')
+        selectableOptions('List')
         cy.get('ul#verticalListContainer li').contains('Cras justo odio').click().then((active)=> {
 			cy.log(active);
 			let activeClass = active.hasClass('active');
@@ -38,12 +44,12 @@ describe('Validar escenario pal Juanjo', () => {
 
 	})
 
-    it.only('Validate that an element from a grid is selected', () => {
+    it('Validate that an element from a grid is selected', () => {
 		
         
-        cy.get('.card.mt-4.top-card').contains('Interactions').click()
-        cy.contains('Selectable').click()
-        cy.get('#listContainer').contains('Grid').click()
+        menuOption('Interactions')
+        menuList('Selectable')
+        selectableOptions('Grid')
         cy.get('#gridContainer li').contains('Five').click().then((active)=> {
 			cy.log(active);
 			let activeClass = active.hasClass('active');

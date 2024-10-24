@@ -1,3 +1,4 @@
+import { loginPage } from '../../../fixtures/pom.ts';
 describe('Validate landing page works as expected', () => {
 	
 	it('Validate elements displayed to interact', () => {
@@ -71,7 +72,7 @@ describe('Validate landing page works as expected', () => {
     cy.get('footer').should('have.text', '© 2013-2020 TOOLSQA.COM | ALL RIGHTS RESERVED.')
 
 })
-it.only('Validate that all elements in menu are displayed, with array', () => {
+it('Validate that all elements in menu are displayed, with array', () => {
 	cy.viewport(1920, 1080)
   cy.clearCookies()
   cy.clearLocalStorage()
@@ -198,24 +199,25 @@ it.only('Validate that all elements in menu are displayed, with array', () => {
 
     it('Validate that all elements in menu are displayed', () => {
 
-      cy.validateMenu()
+      loginPage.validateMenu()
       cy.get('footer').should('have.text', '© 2013-2020 TOOLSQA.COM | ALL RIGHTS RESERVED.')
       
       })
 
       it('Login', () => {
+        cy.viewport(1920, 1080)
+        cy.clearCookies()
+        cy.clearLocalStorage()
+        cy.visit('/')
 		
-        cy.get('.category-cards .card-body').contains('Elements')
-            cy.get('.category-cards .card-body').contains('Forms')
-            cy.get('.category-cards .card-body').contains('Alerts, Frame & Windows')
-            cy.get('.category-cards .card-body').contains('Widgets')
-            cy.get('.category-cards .card-body').contains('Interactions')
+        loginPage.validateMenu()
             cy.get('footer').should('have.text', '© 2013-2020 TOOLSQA.COM | ALL RIGHTS RESERVED.')
             cy.get('.category-cards .card-body').contains('Book Store Application').click()
             cy.contains('Login').click()
             cy.fixture('example').then(({ email }) => {
-              cy.get('#userName').type(email)
-              })
+              loginPage.fillEmail(email)
+
+            })
             
 
 

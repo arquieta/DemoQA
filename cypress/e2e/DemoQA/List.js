@@ -72,7 +72,7 @@ describe('Validate diferent methods to use lists', () => {
                         'Morbi leo risus',
                         'Porta ac consectetur ac'
                       ];
-                    $li.click();
+                    $li.click ();
                     cy.wrap($li)
                     .should('be.visible')
                     .should('have.text', expectedTexts[index]).and('have.class', 'active');

@@ -4,6 +4,6 @@
 		"lib": ["es5", "dom"],
 		"types": ["cypress, node"]
 	},
-	"include": ["**/*.ts"],
+	"include": ["**/*.ts", "cypress/e2e/DemoQA/Hardcoded Lists/Encora.cy.js"],
 	"exclude": []
 }
