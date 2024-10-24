@@ -15,8 +15,9 @@ describe('Validate diferent methods to use lists', () => {
                 'Book Store Application'
             ];
             cy.wrap($element).should('have.text', menuItems[index])
+            
         })
-        
+        cy.get('.category-cards .card-body').eq(4).click()
         //we are adding validations to some steps to assure we are displaying the required information
         cy.get('.left-pannel .accordion .element-group').contains('Interactions').should('have.text', 'Interactions')
         

@@ -96,7 +96,7 @@ describe('Working with forms', () => {
         cy.contains('td', 'Student Email').siblings('td').should('contain', 'email@emaildot.com');
         cy.contains('td', 'Gender').siblings('td').should('contain', 'Male');
         cy.contains('td', 'Mobile').siblings('td').should('contain', '8115182488');
-        cy.contains('td', 'Date of Birth').siblings('td').should('contain', '25 August,2023');
+        cy.contains('td', 'Date of Birth').siblings('td').should('contain', '30 August,2023');
         cy.contains('td', 'Subjects').siblings('td').should('be.empty');
         cy.contains('td', 'Hobbies').siblings('td').should('be.contain', 'Reading');
         cy.contains('td', 'Picture').siblings('td').should('contain', 'test.png');

@@ -5,7 +5,7 @@ describe('Validate landing page works as expected', () => {
   cy.viewport(1920, 1080)
 	cy.clearCookies()
 	cy.clearLocalStorage()
-	cy.visit('https://demoqa.com/')
+	cy.visit('/')
 		
 		cy.get('.category-cards .card-body').contains('Elements')
     cy.get('.category-cards .card-body').contains('Forms')
